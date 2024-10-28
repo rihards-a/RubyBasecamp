@@ -1,0 +1,35 @@
+<h1> Sign up </h1>
+
+<!-- the object instance address that was created in the controller for user -->
+<%= @user %>
+
+<!-- rails feature for creating user input - form_with -->
+<%= form_with model: @user, url: sign_up_path do |form| %>
+    <!-- handles error messages for incorrect inputs -->
+    <% if @user.errors.any? %>
+        <div class = "alert alert-danger">
+            <% @user.errors.full_messages.each do |message| %>
+                <div> <%= message %> </div>
+            <% end %>
+        </div>
+    <% end %>
+
+    <!-- field has form control class for bootstrap, form.label - explains what to write into form, placeholder - gives example of input -->
+    <div class="mb-3">
+        <%= form.label :email %>
+        <%= form.text_field :email, class: "form-control", placeholder: "your@email.here" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :password %>
+        <%= form.password_field :password, class: "form-control", placeholder: "password123" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :"password_confirmation" %>
+        <%= form.password_field :password_confirmation, class: "form-control", placeholder: "passowrd123" %>
+    </div>
+
+    <!-- creates a POST request to the route -->
+    <div class="mb-3">
+        <%= form.submit "Create User", class: "btn btn-primary" %>
+    </div>
+<% end %>

@@ -11,7 +11,9 @@ class UserController < ApplicationController
     def create
         # not using params[:user] because if we want to include future flags like is_admin, we do not want to allow the user to control that, we use a helper function
         @user = User.new(user_params)
-        if @user.save
+        if @user.save # input data validation
+            # signing in via session (not sign, for encryption purposes) cookies, can be set only server side - browsers can't tamper with session cookies
+            session[:user_id] = @user.id
             # WILL HAVE TO CHANGE TO USER_PATH TO #SHOW CONTROLLER WHEN IT IS SET UP
             redirect_to root_path, notice: "successfully created account"
         else

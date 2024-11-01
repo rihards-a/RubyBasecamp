@@ -1,6 +1,8 @@
 <div class="d-flex align-items-center justify-content-center">
     <h1>My_Basecamp</h1>
+</div>
 
+<div>
     <div>
         <% if @user %>
             Logged in as: <%= @user.email %>
@@ -16,4 +18,6 @@
     </ul>
     <% end %>
 
+    <!-- method delete automatically transforms a GET request to DELETE request using JS, because web forms actually only support GET and POST -->
+    <%= button_to "Logout", logout_path, method: :delete %> 
 </div>

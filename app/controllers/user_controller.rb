@@ -23,6 +23,7 @@ class UserController < ApplicationController
 
     private
     def user_params
+        # .require(user) ensures that params include the user key, if it isn't present it raises an error, permit declares what can be passed in
         params.require(:user).permit(:email, :password, :password_confirmation)
     end
 end

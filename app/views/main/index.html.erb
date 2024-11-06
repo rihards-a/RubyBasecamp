@@ -3,12 +3,6 @@
 </div>
 
 <div>
-    <div>
-        <% if @user %>
-            Logged in as: <%= @user.email %>
-        <% end %>
-    </div>
-
     <!-- testing purposes - displays all user emails -->
     <% if @users %>
     <ul>
@@ -17,7 +11,4 @@
         <% end %>
     </ul>
     <% end %>
-
-    <!-- method delete automatically transforms a GET request to DELETE request using JS, because web forms actually only support GET and POST -->
-    <%= button_to "Logout", logout_path, method: :delete %> 
 </div>

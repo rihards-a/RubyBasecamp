@@ -1,6 +1,5 @@
 <!-- the underscore at the start indicates that this is partial -->
-<nav class="navbar" style="background-color: #e3f2fd;">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
     <div class="container-fluid">
         <%= link_to "NavBar", root_path, class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -13,15 +12,30 @@
                 </li>
                 <li class="nav-item">
                     <!-- helper func so you don't have to manually change each entry if you want to change the link -->
-                    <!-- the prefix written ir routes.rb (can be found thru "rails routes") and attaching _url or _path will return the link -->
+                    <!-- the prefix written is routes.rb (can be found thru "rails routes") and attaching _url or _path will return the link -->
                     <%= link_to "About", about_path, class: "nav-link" %>
-                    <!-- <a class="nav-link" href="About">About</a> -->
+                    <!-- same as - <a class="nav-link" href="About">About</a> -->
+                </li>
+            </ul>
+            <!-- the right side of the navbar -->
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <% if Current.user %>
+                <li class="nav-item">
+                    <span><%= Current.user.email%></span>
                 </li>
                 <li class="nav-item">
-                    <%= link_to "Sign up", sign_up_path, class: "nav-link" %>
+                <!-- method delete automatically transforms a GET request to DELETE request using JS, because web forms actually only support GET and POST -->
+                    <%= button_to "Logout", logout_path, method: :delete, class: "nav-link" %> 
                 </li>
+            <% else %>
+                <li class="nav-item">
+                    <%= link_to "Login", sign_in_path, class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Sign Up", sign_up_path, class: "nav-link" %>
+                </li>
+            <% end %>
             </ul>
         </div>
     </div>
-    </nav>
 </nav>

@@ -5,11 +5,12 @@ Rails.application.routes.draw do
   # User registration and session management
   get "sign_up", to: "user#new" # get for filling out forms and post for submitting them
   post "sign_up", to: "user#create"
-
   get "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create"
-
   delete "logout", to: "sessions#destroy"
+  # Updating a user's password
+  get "password", to: "passwords#edit", as: :edit_password
+  patch "password", to: "passwords#update"
 
   get "user", to: "user#show" # to implement - display user profile details
 

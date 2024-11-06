@@ -20,12 +20,12 @@
             <!-- the right side of the navbar -->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <% if Current.user %>
-                <li class="nav-item">
-                    <span><%= Current.user.email%></span>
+                <li class="nav-item px-2">
+                    <%= link_to Current.user.email, edit_password_path, class: "nav-link" %>
                 </li>
                 <li class="nav-item">
                 <!-- method delete automatically transforms a GET request to DELETE request using JS, because web forms actually only support GET and POST -->
-                    <%= button_to "Logout", logout_path, method: :delete, class: "nav-link" %> 
+                    <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-outline-secondary" %> 
                 </li>
             <% else %>
                 <li class="nav-item">

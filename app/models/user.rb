@@ -8,5 +8,5 @@ class User < ApplicationRecord
 
   # REGEX code for validating emails
   valid_email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, uniqueness: { message: "email is already taken" }, format: { with: valid_email_regex, message: "must be a valid email address" }
+  validates :email, presence: true, uniqueness: { message: "is already taken" }, format: { with: valid_email_regex, message: "must be a valid email address" }
 end

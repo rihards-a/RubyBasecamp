@@ -3,7 +3,7 @@ class UserController < ApplicationController
       # will have to make this to display user information later
     end
 
-    def new
+    def new # used to lead to the signup page and have the ability for: form_with model: @user
         # instance variable with @, so the variable is available outside of this method
         @user = User.new
     end

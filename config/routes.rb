@@ -2,9 +2,12 @@
 Rails.application.routes.draw do
   get "about_renamed", to: "about#index", as: :about # the _path will return this route, even if the url name gets changed == # get "about", to: "about#index"
 
-  # User registration and session management
-  get "sign_up", to: "user#new" # get for filling out forms and post for submitting them
-  post "sign_up", to: "user#create"
+  # User registration and control
+  get "sign_up", to: "user#new" # Form to sign up
+  post "sign_up", to: "user#create" # Submit form
+  get "user", to: "user#show", as: :user_profile
+  delete "user", to: "user#delete", as: :delete_user
+  # Session management
   get "sign_in", to: "sessions#new"
   post "sign_in", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
@@ -16,8 +19,6 @@ Rails.application.routes.draw do
   post "password/reset", to: "passwords_resets#create"
   get "password/reset/edit", to: "passwords_resets#edit"
   patch "password/reset/edit", to: "passwords_resets#update"
-
-  get "user", to: "user#show" # to implement - display user profile details
 
   get "/", to: "main#index", as: :root # Same as root to: "" || root ""
 end

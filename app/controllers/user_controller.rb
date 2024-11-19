@@ -1,6 +1,14 @@
 class UserController < ApplicationController
+    before_action :require_user_logged_in, only: [ :show, :delete ]
     def show
       # will have to make this to display user information later
+    end
+
+    def delete
+        Rails.logger.debug "Delete action called for usAAAAAAAAAAAAAAAAAAAAAAAAAAAer: #{Current.user.email}"
+        Current.user.destroy
+        session[:user_id] = nil
+        redirect_to sign_up_path, notice: "You account has been successfully deleted."
     end
 
     def new # used to lead to the signup page and have the ability for: form_with model: @user

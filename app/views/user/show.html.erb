@@ -1,1 +1,26 @@
-<h1> here it will have to display current user information </h1>
+<div class="card-body">
+    <h1 class="card-title text-center text-primary mb-3">User Profile</h1>
+    <p class="text-muted text-center mb-4">Manage your account details</p>
+
+    <!-- User Email -->
+    <div class="mb-3">
+    <h6 class="text-secondary">Email</h6>
+    <p class="mb-0 text-dark fw-bold"><%= Current.user.email %></p>
+    </div>
+
+    <!-- User Creation Date -->
+    <div class="mb-4">
+    <h6 class="text-secondary">Account Created On</h6>
+    <p class="mb-0 text-dark fw-bold"><%= Current.user.created_at.strftime("%B %d, %Y") %></p>
+    </div>
+
+    <!-- Change Password Button -->
+    <div class="d-flex justify-content-center p-3">
+    <%= link_to "Change Current Password", edit_password_path, class: "btn btn-primary btn-lg px-4" %>
+    </div>
+
+    <!-- Delete User Account Button -->
+    <div class="d-flex justify-content-center p-3">
+        <%= button_to "Delete Account", delete_user_path, method: :delete, class: "btn btn-danger", rel: "nofollow" %>
+    </div>
+</div>

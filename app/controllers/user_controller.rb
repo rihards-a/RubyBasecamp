@@ -5,10 +5,9 @@ class UserController < ApplicationController
     end
 
     def delete
-        Rails.logger.debug "Delete action called for usAAAAAAAAAAAAAAAAAAAAAAAAAAAer: #{Current.user.email}"
         Current.user.destroy
         session[:user_id] = nil
-        redirect_to sign_up_path, notice: "You account has been successfully deleted."
+        redirect_to root_path, notice: "You account has been successfully deleted."
     end
 
     def new # used to lead to the signup page and have the ability for: form_with model: @user

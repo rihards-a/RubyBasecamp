@@ -1,0 +1,95 @@
+[33mcommit 7452f69908f77d1d8d0c0985ef36ceef62d3205a[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Tue Nov 19 12:19:06 2024 +0200
+
+    fixed issue pushing, somehow got manifest.js ruined
+
+[33mcommit 40fe3c53d2c27835c9a507c54fac939597001578[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Tue Nov 19 12:05:27 2024 +0200
+
+    added the option to view the user profile and the option to delete the current user's profile
+
+[33mcommit e3c746c5c3675269ab75798be7a7d21ebc75a078[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Tue Nov 19 11:49:31 2024 +0200
+
+    Added a user profile page and the option to delete the user's account
+
+[33mcommit 0f3a537a8b6d2d77533f1a98163553101813415b[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Wed Nov 6 17:57:58 2024 +0200
+
+    added the option to reset your password via email using GlobalID tokens
+
+[33mcommit 37de405d049e0e7da1c0de092686209904f39c12[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Wed Nov 6 15:28:30 2024 +0200
+
+    Added validation to check if a new email is already in use
+
+[33mcommit 7c63c428bd8f1011633f2814184aed387342bfe2[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Wed Nov 6 15:25:49 2024 +0200
+
+    Added validation to check if a new email is already in use
+
+[33mcommit a3376e7baa13aa7613c8bce95bd4407458ab2b25[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Wed Nov 6 12:41:19 2024 +0200
+
+    added an option to edit the current user's password
+
+[33mcommit 941e1e503d70d00d11454518f12957423db67152[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Wed Nov 6 12:04:25 2024 +0200
+
+    made it so that there can be multiple users at once via Current.user model method, and made a proper navbar for user options
+
+[33mcommit 73297f6a80f9ba0b15e7e5a272b065e2274fd107[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Wed Nov 6 12:01:17 2024 +0200
+
+    edited comments
+
+[33mcommit bebcf2a5bd3161ea6dfa74f98d3b50d1dc8b9dfb[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Wed Nov 6 11:59:46 2024 +0200
+
+    changed to layout of the routes for easier management
+
+[33mcommit 9f7dbab6472d4d8d630e22585febe96d46f064ce[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Wed Nov 6 11:58:08 2024 +0200
+
+    installed the proper newest BoostStrap version
+
+[33mcommit 4c6d67ee7f476fce5331267bd909a8ccc30af643[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Fri Nov 1 13:57:00 2024 +0200
+
+    added a sign in and sign out option and simplified flash message handling
+
+[33mcommit d1604ed9c5930689cc9e845d585456055fba0b2b[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Fri Nov 1 11:47:59 2024 +0200
+
+    implemented session cookies login
+
+[33mcommit b876867373973a1ae0eed7dc9432319de6de093f[m
+Author: rihards-a <rihards.abolins1@gmail.com>
+Date:   Mon Oct 28 19:17:34 2024 +0200
+
+    Delete 2
+
+[33mcommit bbef3ce66c77a69f252a293faa25da374772b05d[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Mon Oct 28 19:16:25 2024 +0200
+
+    created a user sign up page with basic error validation
+
+[33mcommit 6370f25296b84900bbbc684bf2cb0dbb4a321abc[m
+Author: Rihards <rihards.abolins1@gmail.com>
+Date:   Mon Oct 28 17:53:46 2024 +0200
+
+    first commit of all progress

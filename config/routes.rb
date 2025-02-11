@@ -21,4 +21,9 @@ Rails.application.routes.draw do
   patch "password/reset/edit", to: "passwords_resets#update"
 
   get "/", to: "main#index", as: :root # Same as root to: "" || root ""
+
+  namespace :admin do
+    get "dashboard", to: "admin#dashboard", as: "dashboard"
+    patch "users/:id/toggle_admin", to: "admin#toggle_admin", as: "toggle_admin"
+  end
 end

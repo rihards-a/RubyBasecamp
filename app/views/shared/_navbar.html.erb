@@ -20,6 +20,11 @@
             <!-- the right side of the navbar -->
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <% if Current.user %>
+                <% if Current.user.is_admin %>
+                    <li class="nav-item">
+                        <%= link_to "Admin Panel", admin_dashboard_path, class: "nav-link" %>
+                    </li>
+                <% end %>
                 <li class="nav-item px-2">
                     <%= link_to Current.user.email, user_profile_path, class: "nav-link" %>
                 </li>

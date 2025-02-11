@@ -26,4 +26,6 @@ Rails.application.routes.draw do
     get "dashboard", to: "admin#dashboard", as: "dashboard"
     patch "users/:id/toggle_admin", to: "admin#toggle_admin", as: "toggle_admin"
   end
+
+  resources :projects # This will create all the routes for the projects controller
 end

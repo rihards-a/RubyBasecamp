@@ -1,0 +1,10 @@
+<h1><%= @project.name %></h1>
+<p>Created by: <%= @project.user.email %></p>
+<p>Members:</p>
+<ul>
+  <% @project.project_memberships.each do |membership| %>
+    <li>
+      <%= membership.user.email %> - <%= membership.role %>
+    </li>
+  <% end %>
+</ul>

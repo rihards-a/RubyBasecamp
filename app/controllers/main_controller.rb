@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   def index
-    # TESTING PURPOSES DISPLAYS ALL USER EMAILS
-    @users = User.all
+    readme_path = Rails.root.join("README.md")
+    @readme_content = Kramdown::Document.new(File.read(readme_path)).to_html.html_safe
   end
 end

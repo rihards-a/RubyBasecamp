@@ -1,23 +1,42 @@
-<h1>Reset your password</h1>
+<div class="card shadow-lg mt-4">
+  <div class="card-header bg-warning text-white">
+    <h1 class="mb-0">Reset Your Password</h1>
+  </div>
 
-<%= form_with model: @user, url: password_reset_edit_path(token: params[:token]) do |form| %>
-    <% if form.object.errors.any? %>
-        <div class = "alert alert-danger">
+  <div class="card-body">
+    <p class="lead">Enter your new password below.</p>
+
+    <%= form_with model: @user, url: password_reset_edit_path(token: params[:token]) do |form| %>
+
+      <!-- Error Messages -->
+      <% if form.object.errors.any? %>
+        <div class="alert alert-danger">
+          <h4 class="alert-heading">Errors:</h4>
+          <ul class="mb-0">
             <% form.object.errors.full_messages.each do |message| %>
-                <div> <%= message %> </div>
+              <li><%= message %></li>
             <% end %>
+          </ul>
         </div>
-    <% end %>
+      <% end %>
 
-    <div class="mb-3">
-        <%= form.label :password %>
+      <!-- Password Field -->
+      <div class="mb-3">
+        <%= form.label :password, class: "form-label" %>
         <%= form.password_field :password, class: "form-control", placeholder: "password123" %>
-    </div>
-    <div class="mb-3">
-        <%= form.label :"password_confirmation" %>
+      </div>
+
+      <!-- Password Confirmation -->
+      <div class="mb-3">
+        <%= form.label :password_confirmation, "Confirm Password", class: "form-label" %>
         <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password123" %>
-    </div>
-    <div class="mb-3">
-        <%= form.submit "Update Password", class: "btn btn-primary" %>
-    </div>
-<% end %>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="d-grid">
+        <%= form.submit "Update Password", class: "btn btn-warning btn-lg" %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

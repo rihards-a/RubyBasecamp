@@ -6,14 +6,10 @@ class ProjectMembership < ApplicationRecord
 
   # enum role: [ :owner, :collaborator, :viewer ]
 
-  OWNER = 0
-  COLLABORATOR = 1
-  VIEWER = 2
-
-  ROLES = { owner: OWNER, collaborator: COLLABORATOR, viewer: VIEWER }
+  ROLES = { owner: 0, collaborator: 1, viewer: 2 }
 
   def role
-    ROLES.key(read_attribute(:role)).to_s.titleize
+    ROLES.key(read_attribute(:role))
   end
 
   def role=(value)

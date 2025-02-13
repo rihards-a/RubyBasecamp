@@ -1,26 +1,39 @@
-<h1> Change Password </h1>
+<div class="container d-flex justify-content-center">
+  <div class="card shadow-sm mt-5 p-4" style="max-width: 450px; width: 100%; border-radius: 12px;">
+    <div class="card-header bg-primary text-white text-center py-3" style="border-radius: 10px 10px 0 0;">
+      <h2 class="mb-0">Change Password</h2>
+    </div>
 
-<!-- rails feature for creating user input - form_with -->
-<%= form_with model: Current.user, url: edit_password_path do |form| %>
-    <!-- handles error messages for incorrect inputs -->
-    <% if form.object.errors.any? %>
-        <div class = "alert alert-danger">
-            <% form.object.errors.full_messages.each do |message| %>
-                <div> <%= message %> </div>
+    <div class="card-body">
+      <p class="text-muted text-center">Update your password securely.</p>
+
+      <!-- Display Errors if any -->
+      <% if Current.user.errors.any? %>
+        <div class="alert alert-danger">
+          <ul class="mb-0">
+            <% Current.user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
             <% end %>
+          </ul>
         </div>
-    <% end %>
+      <% end %>
 
-    <div class="mb-3">
-        <%= form.label :"new password" %>
-        <%= form.password_field :password, class: "form-control", placeholder: "password123" %>
-    </div>
-    <div class="mb-3">
-        <%= form.label :"new password_confirmation" %>
-        <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password123" %>
-    </div>
+      <!-- Change Password Form -->
+      <%= form_with model: Current.user, url: edit_password_path do |form| %>
+        <div class="mb-3">
+          <%= form.label :password, "New Password", class: "form-label fw-semibold" %>
+          <%= form.password_field :password, class: "form-control", placeholder: "Enter new password" %>
+        </div>
 
-    <div class="mb-3">
-        <%= form.submit "Update Password", class: "btn btn-primary" %>
+        <div class="mb-3">
+          <%= form.label :password_confirmation, "Confirm New Password", class: "form-label fw-semibold" %>
+          <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Re-enter new password" %>
+        </div>
+
+        <div class="d-grid">
+          <%= form.submit "Update Password", class: "btn btn-primary fw-semibold btn-lg" %>
+        </div>
+      <% end %>
     </div>
-<% end %>
+  </div>
+</div>

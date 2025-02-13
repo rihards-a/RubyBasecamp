@@ -1,11 +1,21 @@
-<h1>Your Projects</h1>
+<div class="card shadow-lg mt-4">
+  <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+    <h1 class="mb-0">Your Projects</h1>
+    <%= link_to "New Project", new_project_path, class: "btn btn-light text-primary fw-bold" %>
+  </div>
 
-<%= link_to "New Project", new_project_path, class: "btn btn-primary" %>
-
-<ul>
-  <% @projects.each do |project| %>
-    <li>
-      <%= link_to project.name, project %>
-    </li>
-  <% end %>
-</ul>
+  <div class="card-body">
+    <% if @projects.any? %>
+      <ul class="list-group">
+        <% @projects.each do |project| %>
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <%= link_to project.name, project, class: "text-decoration-none fw-bold" %>
+            <%= link_to "View", project, class: "btn btn-sm btn-outline-primary" %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p class="text-muted">You don’t have any projects yet.</p>
+    <% end %>
+  </div>
+</div>

@@ -1,49 +1,50 @@
-<!-- the underscore at the start indicates that this is partial -->
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-    <div class="container-fluid">
-        <%= link_to "NavBar", root_path, class: "navbar-brand" %>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <%= link_to "Home", root_path, class: "nav-link" %>
-                </li>
-                <li class="nav-item">
-                    <!-- helper func so you don't have to manually change each entry if you want to change the link -->
-                    <!-- the prefix written is routes.rb (can be found thru "rails routes") and attaching _url or _path will return the link -->
-                    <%= link_to "About", about_path, class: "nav-link" %>
-                    <!-- same as - <a class="nav-link" href="About">About</a> -->
-                </li>
-            </ul>
-            <!-- the right side of the navbar -->
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <% if Current.user %>
-                <% if Current.user.is_admin %>
-                    <li class="nav-item">
-                        <%= link_to "Admin Panel", admin_dashboard_path, class: "nav-link" %>
-                    </li>
-                <% end %>
-                <li class="nav-item px-2">
-                    <%= link_to "Projects", projects_path, class: "nav-link" %>
-                </li>
-                <li class="nav-item px-2">
-                    <%= link_to Current.user.email, user_profile_path, class: "nav-link" %>
-                </li>
-                <li class="nav-item">
-                <!-- method delete automatically transforms a GET request to DELETE request using JS, because web forms actually only support GET and POST -->
-                    <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-outline-secondary" %> 
-                </li>
-            <% else %>
-                <li class="nav-item">
-                    <%= link_to "Login", sign_in_path, class: "nav-link" %>
-                </li>
-                <li class="nav-item">
-                    <%= link_to "Sign Up", sign_up_path, class: "nav-link" %>
-                </li>
-            <% end %>
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-lg shadow-sm" style="background: linear-gradient(to right, #2196F3, #64B5F6);">
+  <div class="container">
+    <!-- Brand Name -->
+    <%= link_to "MyApp", root_path, class: "navbar-brand text-white fw-bold fs-4" %>
+
+    <!-- Mobile Toggle Button -->
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Home", root_path, class: "nav-link text-white fw-semibold px-3" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "About", about_path, class: "nav-link text-white fw-semibold px-3" %>
+        </li>
+      </ul>
+
+      <!-- Right-Aligned Links -->
+      <ul class="navbar-nav ms-auto">
+        <% if Current.user %>
+          <% if Current.user.is_admin %>
+            <li class="nav-item">
+              <%= link_to "Admin Panel", admin_dashboard_path, class: "nav-link text-warning fw-semibold px-3" %>
+            </li>
+          <% end %>
+          <li class="nav-item">
+            <%= link_to "Projects", projects_path, class: "nav-link text-white fw-semibold px-3" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to Current.user.email, user_profile_path, class: "nav-link text-white fw-semibold px-3" %>
+          </li>
+          <li class="nav-item">
+            <%= button_to "Logout", logout_path, method: :delete, class: "btn btn-light fw-semibold px-3 mx-2" %>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", sign_in_path, class: "nav-link text-white fw-semibold px-3" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Sign Up", sign_up_path, class: "btn btn-outline-light fw-semibold px-3 mx-2" %>
+          </li>
+        <% end %>
+      </ul>
     </div>
+  </div>
 </nav>

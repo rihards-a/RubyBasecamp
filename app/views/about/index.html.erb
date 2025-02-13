@@ -1,2 +1,40 @@
-<!-- Everything else like stylesheets, JS, etc. gets wrapped around from the layouts -->
-<h1>About page</h1>
+<div class="container mt-5">
+  <div class="card shadow-lg">
+    <div class="card-header bg-primary text-white">
+      <h1 class="mb-0">About MyBasecamp1</h1>
+    </div>
+    
+    <div class="card-body">
+      <p class="lead">
+        <strong>MyBasecamp1</strong> is a web-based project management tool inspired by the original 
+        <a href="https://basecamp.com/" target="_blank" class="text-decoration-none">Basecamp</a>. 
+        It allows users to organize, collaborate, and manage projects efficiently.
+      </p>
+
+      <h3 class="mt-4">What is Basecamp?</h3>
+      <p>
+        Basecamp is a project management tool launched in 2004. It provides essential features such as 
+        to-do lists, milestone tracking, messaging, file sharing, and time tracking.
+      </p>
+
+      <h3 class="mt-4">Project Goals</h3>
+      <p>
+        MyBasecamp1 aims to mimic key features of Basecamp, requiring a database, backend, and frontend. 
+        This project is divided into three main parts, focusing on user experience and functionality.
+      </p>
+
+      <h3 class="mt-4">Core Features</h3>
+      <ul class="list-group">
+        <li class="list-group-item"><strong>User Registration:</strong> Create, view, and delete user accounts.</li>
+        <li class="list-group-item"><strong>Password Resetting:</strong> Reset your account password through e-mail.</li>
+        <li class="list-group-item"><strong>Session Management:</strong> Log in and log out securely.</li>
+        <li class="list-group-item"><strong>Role Permissions:</strong> Assign and revoke admin rights.</li>
+        <li class="list-group-item"><strong>Project Management:</strong> Create, edit, view, and delete projects.</li>
+      </ul>
+    </div>
+
+    <div class="card-footer text-center">
+      <a href="<%= root_path %>" class="btn btn-secondary">Back to Home</a>
+    </div>
+  </div>
+</div>

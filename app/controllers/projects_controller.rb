@@ -1,7 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :authorize_user!, only: [ :edit, :update, :destroy ]
-
   before_action :set_project, only: %i[show edit update destroy] # nice syntax thing
+  before_action :authorize_user!, only: [ :edit, :update, :destroy ]
 
   def index
     @projects = Current.user.joined_projects
